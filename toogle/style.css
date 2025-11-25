@@ -1,0 +1,65 @@
+.container{
+    display:flex;
+    width: 100vw;
+}
+.container > div{
+    flex-basis: 50%;
+    min-height: 100vh;
+}
+
+.container .chocolateoreo{
+    background:black;
+    color:white;
+}
+
+.container .vanilla{
+    background:white;
+    color:black;
+}
+
+#imgoreo{
+    width:400px;
+    height:400px;
+    display:block;
+    margin-left: 200px;
+    margin-top: 200px;
+    padding-left:0px;
+    position: absolute;
+}
+
+#imgvanilla{
+    width:400px;
+    height:400px;
+    display:block;
+    margin: 0 auto;
+    padding-top:50px;
+}
+
+.this{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+.that{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+button #this{
+position: absolute;
+text-align: center;
+display: block;
+margin-left: 75%;
+margin-top: 400px;
+}
+button #that{
+position: absolute;
+text-align: center;
+display: block;
+margin-left: 80%;
+margin-top: 400px;
+}
+
+
+

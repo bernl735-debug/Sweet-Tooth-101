@@ -1,0 +1,79 @@
+body{
+    padding: 75px;
+    margin: 40px;
+    color: #000000;
+    font-size: 20px;
+    font-family: "Achivo Black", sans-serif;
+background-image: url("./assests/Back1.jpg");
+}
+
+.content{
+    text-align: left;
+    margin-top: -745px;
+    margin-right: 1200px;
+    font-size: 18px;
+    position: absolute;
+
+}
+
+img {
+    width: 40%;
+    height: 40%;
+    margin-left: 500px;
+    margin-top: -25px;
+
+}
+
+img{
+    animation: waggle-dance;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: relative;
+}
+
+.click {
+    margin-top: -370px;
+    margin-left: 680px;
+    rotate: calc(25deg);
+    font-size: 10px;
+    font-family: "Achivo Black", sans-serif;
+    color: #000000;
+    position: absolute;
+}
+
+
+.section {
+text-align: center;
+margin-left: 1150px;
+margin-top: -200px;
+letter-spacing: 5px;
+line-height: 40px;
+position: absolute;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+.section :hover {
+    color: lch(0% 0 0 / 0.388);
+    cursor: pointer;
+    transform: scale(150%);
+    
+}
+
+
+@keyframes waggle-dance {
+  0% {
+    transform: rotate(10deg);
+
+  }
+  50% {
+    transform: rotate(-10deg);
+
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}

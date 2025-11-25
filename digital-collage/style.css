@@ -1,0 +1,42 @@
+body{
+    padding:0;
+    background-color: #E59341;
+    color: #000000;
+    font-size: 100px;
+    font-family: Arial, sans-serif;
+
+}
+
+
+.title-div {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.title1-div {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
+    padding: 20px;
+    row-gap: 80px;
+    column-gap: 80px;
+}
+
+.gallery img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}

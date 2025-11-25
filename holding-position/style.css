@@ -1,0 +1,85 @@
+body{
+    padding:0;
+    background-color: #f8dfbb;
+    color: #181717;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}
+.reanimation-title {
+   background: #ffdab9;
+   width: 100%;
+   font-size: larger;
+   position: relative;
+   text-align: center;
+   margin: -5%;
+padding-top: 50px;
+    padding-bottom: 20px;
+
+}
+
+.title-div {
+    width: 25%;
+    font-size: larger;
+    text-align: center;
+    margin: 0% auto;
+}
+
+.gallery {
+    width: 75%;
+    margin: 0% auto;
+    text-align: center;
+    position: relative;
+
+}
+
+.gallery img{
+    width: 25%;
+    margin: 15%;
+    display: inline-block;
+    vertical-align: right;
+}
+
+nav{ 
+    background-color: #181717;
+    color: white;
+    padding: 15px; 
+    position: sticky;
+    top: 0;
+    right: 1250px;
+    width: 100%;
+    z-index: 2;
+    text-align: right;
+}
+
+nav a{
+    margin-right: 35px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.rang{
+    position: sticky;
+    top: 0;
+}
+
+
+.about{
+    width: 50%;
+    margin: 0% auto;
+    text-align: center;
+    position: relative;
+    font-size: larger;
+    padding-bottom: 50px;
+    background-color: darkgrey;
+}
+.paragraph-div{
+    margin-top: 100px;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+body {
+    background-color: #EDBED5;
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    padding: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    padding: 50px;
+    row-gap: 50px;
+    column-gap: 50px;
+}
+.gallery img{
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 200px;
+}
+.gallery img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+} 
+
+/* hover to show text*/
+.gallery > div h2{
+ 
+    opacity:0; /* hide on default */
+    transition: opacity 0.5s ease;
+}
+
+.gallery > div:hover h2{
+
+    opacity:1; /* when you hover over the div that surrounds the text and image, show the text*/
+  
+}

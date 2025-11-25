@@ -1,0 +1,33 @@
+body{
+    background: beige;
+}
+
+h1{font-size: 200px;
+    font-family: "Archivo Black", sans-serif;
+}
+
+p {font-size: 50px;
+    color: gray;
+    text-align: right;
+     font-family:'Times New Roman', Times, serif;
+}
+
+a, a:visited{
+    color: cornflowerblue;
+    text-decoration: none;
+}
+a:hover{
+    color: blue;
+}
+
+.gold{ 
+    font-size: 50px;
+    text-align: center;
+    color:dimgray
+}
+
+img {
+    width: 1500px;
+    margin-top: 30px;
+}
+

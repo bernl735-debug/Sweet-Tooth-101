@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #E8D5DC;
+    text-align: center;
+    font-size: 18px;
+}
+
+.header{
+    background: #000;
+    padding: 10px;
+    color: #ffffff;
+}
+
+.description {
+    padding: 20px;
+    text-align: left;
+}
+
+.how-to-make {
+    padding: 20px;
+}
+
+.ingredients {
+    padding: 20px;
+}
+
+#fresa img {
+    position: absolute;
+    max-width: 500px;
+    height: 500px;
+    left: 5px;
+    top: -50px;
+}
+
+#fresa {
+    position: relative;
+}
+
+.fresaconcrema {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.fresaconcrema img {
+    max-width: 500px;
+    height: 500px;
+    flex-direction: row;
+    align-items: flex-end;
+
+}
+
+.stepone {
+    text-align: left;
+    padding-right: 300px;
+    font-size: 30px;
+    margin: 200px;
+    padding-bottom: -200px;
+   
+}
+
+.steptwo {
+    text-align: left;
+    padding-left: 600px;
+    padding-bottom: -200px;
+
+}
+
+.stepthree {
+    text-align: left;
+    padding-right: 300px;
+    padding-bottom: -200px;
+}
+
+/*mobile*/
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .header {
+        font-size: 40px;
+        margin-right: 0;
+    }
+    #fresa {
+        position: relative;
+        text-align: center;
+        height: 250px;
+        margin-left: 200px;
+        margin-bottom: -100px;
+
+    }
+
+    #fresa img {
+        max-width: 200px;
+        height: 200px;
+        left: 0;
+        top: 0;
+        margin-bottom: 20px;
+    }
+    .fresaconcrema {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fresaconcrema img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .stepone, .steptwo, .stepthree {
+        padding: 0;
+        margin: 10px 0;
+        font-size: 20px;
+    }
+}
+.header {
+    text-align: left;
+    font-size: 10px;
+    margin-bottom: 20px;
+    margin-right: 455px;   
+}
