@@ -1,0 +1,83 @@
+
+body {
+    font-size: 50px;
+    font-family: monospace;
+}
+
+main {
+    display: flex;
+}
+
+#settings {
+    margin: 25px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+#poster {
+    border: 1px dotted;
+    display: inline-block;
+    padding: 25px;
+    text-align: center;
+}
+
+#poster-text {
+    font-size: 24px;
+    font-family: "Codystar";
+}
+
+#poster-image {
+    width: 300px;
+}
+
+button, select{
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    border-radius: 0;
+    padding: 3px;
+    border:1px solid black;
+    outline:none;
+    cursor: pointer;
+}
+button:hover{
+    background-color: black;
+    color: white;
+}
+
+/* media query for print styles -- this allows us to hide everything except the poster itself when printing */
+@media print {
+
+    #poster{
+        print-color-adjust: exact;
+    }
+    /* All your print styles go here */
+    #settings,
+    #print,
+    h4 {
+        display: none;
+    }
+}
+
+/* media query for mobile styles */
+@media (max-width: 760px) {
+    main{
+        flex-direction: column;
+    }
+    #settings {
+        margin: 15px;
+    }
+    #poster{
+        padding: 15px;
+    }
+    #poster-text {
+        font-size: 25px;
+        font-family: "Codystar";
+    }
+    #poster-image {
+        width: 200px;
+    }
+}   

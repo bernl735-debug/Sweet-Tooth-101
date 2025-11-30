@@ -2,16 +2,37 @@ body{
     background: beige;
 }
 
-h1{font-size: 200px;
+h1{font-size: 150px;
     font-family: "Archivo Black", sans-serif;
+    text-align: center;
+    margin-top: 250px;
 }
 
-p {font-size: 50px;
+p {font-size: 40px;
     color: gray;
-    text-align: right;
+    text-align: center;
      font-family:'Times New Roman', Times, serif;
+     margin-top: -80px;
 }
 
+.no{
+    text-align: center;
+    margin-top: 190px; 
+    font-size: 50px;
+    text-align: center;
+    color:dimgray
+}
+
+ img{
+    max-width:500px;
+    height:400px;
+    display: block;
+    margin-left: auto;      
+    margin-right: auto;  
+    margin-top: 100px; 
+     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);     
+}
 a, a:visited{
     color: cornflowerblue;
     text-decoration: none;
@@ -20,14 +41,4 @@ a:hover{
     color: blue;
 }
 
-.gold{ 
-    font-size: 50px;
-    text-align: center;
-    color:dimgray
-}
-
-img {
-    width: 1500px;
-    margin-top: 30px;
-}
-
+ 
