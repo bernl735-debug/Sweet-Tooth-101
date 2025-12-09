@@ -1,7 +1,6 @@
-button.addEventListener('click', function() {
-    let thisDiv = document.querySelector('.this');
-    let thatDiv = document.querySelector('.that');
+let button = document.getElementById('switch-mode');
+let page = document.body;
 
-    thisDiv.classList.toggle('active');
-    thatDiv.classList.toggle('active');
+button.addEventListener('click', function() {
+    page.classList.toggle('dark-mode');
 });

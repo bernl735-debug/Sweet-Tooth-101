@@ -1,65 +1,72 @@
-.container{
-    display:flex;
-    width: 100vw;
-}
-.container > div{
-    flex-basis: 50%;
-    min-height: 100vh;
+
+body{
+    background-color: #ffffff;
+    color: #111111;
 }
 
-.container .chocolateoreo{
-    background:black;
-    color:white;
+body.dark-mode{
+    background-color: rgb(29, 11, 11);
+    color: rgb(255, 255, 255);
 }
 
-.container .vanilla{
-    background:white;
-    color:black;
+
+#imgoreo {
+    width: 700px;
+    height: 400px;
+    display: none;
+    margin-left: 50px;
+    margin-top: 0px;
+    padding-left: 0px;
 }
 
-#imgoreo{
-    width:400px;
-    height:400px;
-    display:block;
-    margin-left: 200px;
-    margin-top: 200px;
-    padding-left:0px;
+#imgvanilla {
+    width: 500px;
+    height: 400px;
+  
+    display: block;
+    margin-left: 1200px;
+    margin-top: -600px;
+ 
+
+
+}
+
+.this {
+    text-align: center;
+    margin-top: -300px;
+    margin-left: 800px;
     position: absolute;
+    font-size: 80px;
+
 }
 
-#imgvanilla{
-    width:400px;
-    height:400px;
-    display:block;
-    margin: 0 auto;
-    padding-top:50px;
-}
-
-.this{
+button{
+    
+    position: absolute;
+    left: 900px;       
+    top: 350px;         
+    z-index: 10;
     text-align: center;
-    font-size: 30px;
-    margin-top: 20px;
+    padding: 10px 50px;
 }
-.that{
+
+.that {
     text-align: center;
-    font-size: 30px;
-    margin-top: 20px;
-}
-
-button #this{
-position: absolute;
-text-align: center;
-display: block;
-margin-left: 75%;
-margin-top: 400px;
-}
-button #that{
-position: absolute;
-text-align: center;
-display: block;
-margin-left: 80%;
-margin-top: 400px;
+    font-size: 80px;
+    margin-top: 400px;
 }
 
 
+.this h2, .that h2 {
+    transition: color 200ms ease;
+}
+
+
+body.dark-mode #imgvanilla {
+    display: none;
+}
+
+body.dark-mode #imgoreo {
+    display: block;
+}
 
