@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Archivo+Black&display=swap');
 
 body{
     background-color: #ffffff;
     color: #111111;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Archivo", sans-serif;
 }
 
 body.dark-mode{
@@ -9,56 +17,68 @@ body.dark-mode{
     color: rgb(255, 255, 255);
 }
 
+.vanilla {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
 
 #imgoreo {
     width: 700px;
     height: 400px;
     display: none;
-    margin-left: 50px;
-    margin-top: 0px;
-    padding-left: 0px;
+    margin: 20px auto 0;
+    animation: image-waggle 1.2s ease-in-out infinite;
 }
 
 #imgvanilla {
     width: 500px;
     height: 400px;
-  
     display: block;
-    margin-left: 1200px;
-    margin-top: -600px;
- 
-
-
+    margin: 20px auto 0;
+    animation: image-waggle 1.2s ease-in-out infinite;
 }
 
 .this {
     text-align: center;
-    margin-top: -300px;
-    margin-left: 800px;
-    position: absolute;
-    font-size: 80px;
-
+    font-size: 40px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
 }
 
 button{
-    
-    position: absolute;
-    left: 900px;       
-    top: 350px;         
     z-index: 10;
     text-align: center;
     padding: 10px 50px;
+    margin: 0;
+    white-space: nowrap;
+    margin-left: -300px;
 }
 
 .that {
     text-align: center;
-    font-size: 80px;
-    margin-top: 400px;
+    font-size: 40px;
+    margin: 20px auto;
 }
 
 
 .this h2, .that h2 {
     transition: color 200ms ease;
+}
+
+@keyframes image-waggle {
+    0% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(6deg) translateY(-4px); }
+    50% { transform: rotate(0deg) translateY(-8px); }
+    75% { transform: rotate(-6deg) translateY(-4px); }
+    100% { transform: rotate(0deg) translateY(0); }
 }
 
 
@@ -70,3 +90,143 @@ body.dark-mode #imgoreo {
     display: block;
 }
 
+img{
+    max-width:500px;
+    height:auto;
+    display: block;
+    margin-left: auto;      
+    margin-right: auto;  
+    margin-top: 20px; 
+    border-radius: 10px;
+}
+a, a:visited{
+    color: cornflowerblue;
+    text-decoration: none;
+}
+a:hover{
+    color: #0000ff;
+}
+
+.my-button {
+    display: block;
+    margin-top: -500px;
+    margin-left: 700px;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(70, 79, 96);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: top;
+}
+
+.my-button:hover {
+    background-color: #000000;
+}
+
+nav{
+    padding: 1rem;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    margin-top: 50px;
+}
+.off-screen-menu{
+   background-color: black;
+   height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position:fixed;
+    top:0;
+    right:-450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+}
+
+.off-screen-menu.active{
+    right:0;
+}
+
+.ham-menu{
+    height: 50px;
+    width: 100px;
+    margin-left: 0;
+    position: relative;
+}
+
+.ham-menu span{
+    /* default: plain thin bar */
+    height: 5px;
+    width: 100px;
+    background-color: #ffffff;
+    display: block;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s ease;
+}
+
+/* Only the middle bar shows the image */
+.ham-menu span:nth-child(2){
+    height: 100px;
+    width: 100px;
+    background-image: url('../assests/flan.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: transparent;
+    border-radius: 8px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ham-menu span:nth-child(1){
+    top: 25%;
+
+}
+.ham-menu span:nth-child(3){
+    top: 75%;
+}
+.ham-menu.active span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2){
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+nav a{
+    margin-right: 35px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.rang{
+    position: sticky;
+    top: 0;
+}
+
+
+.about{
+    width: 50%;
+    margin: 0% auto;
+    text-align: center;
+    position: relative;
+    font-size: larger;
+
+    background-color: darkgrey;
+}

@@ -1,4 +1,14 @@
+document.addEventListener('DOMContentLoaded', function () {
 
+    const hamMenu = document.querySelector('.ham-menu');
+    const offScreenMenu = document.querySelector('.off-screen-menu');
+    if (hamMenu && offScreenMenu) {
+        hamMenu.addEventListener('click', () => {
+            hamMenu.classList.toggle('active');
+            offScreenMenu.classList.toggle('active');
+        });
+    }
+});
 // Getting the form inputs by their ids and storing them in variables
 let backgroundInput = document.getElementById("bg-color");
 let fontColorInput = document.getElementById("fg-color");
@@ -8,6 +18,7 @@ let fontStretchInput = document.getElementById("font-stretch");
 let imageInput = document.getElementById("image");
 let textInput = document.getElementById("text");
 let button = document.getElementById("print");
+const defaultFloatingImage = "./assets/flan.png";
 
 // Getting the poster, the poster text and poster image by their ids and storing them in variables
 let poster = document.getElementById("poster");
@@ -44,10 +55,19 @@ fontStretchInput.addEventListener("change", function(){
 })
 
 
-// when the image input changes, update the poster image 
+// helper to sync floating images with current selection
+function updateFloatingImages(imgPath) {
+    const source = imgPath || defaultFloatingImage;
+    document.querySelectorAll('.floating-flan').forEach((el) => {
+        el.style.backgroundImage = "url('" + source + "')";
+    });
+}
+
+// when the image input changes, update the poster image and floating images
 imageInput.addEventListener("change", function(){
     let img = this.value; //grab the current input value
     posterImage.src = img; //use .src to change the image source
+    updateFloatingImages(img);
 })
 // when the text input changes, update the poster text 
 textInput.addEventListener("change", function(){
@@ -59,3 +79,6 @@ textInput.addEventListener("change", function(){
 button.addEventListener("click", function(){
     window.print(); //use .print to print the window
 })
+
+// initialize floating images to current selection or default
+updateFloatingImages(imageInput.value);

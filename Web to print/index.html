@@ -5,21 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Poster Generator</title>
-
-    <!-- adding google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&family=Limelight&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <!-- linking css file -->
+    <link href="https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&family=Limelight&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../shared/hamburger.css">
 </head>
 
 <body>
+    <div class="floating-flan"></div>
+    <div class="floating-flan floating-flan-2"></div>
+    <nav id="navigation">
+        <div id="Menu">
+            <span id="HOME"></span>
+            <span id="MAP"></span>
+           
+        </div>
 
-    <h4>Name your own dessert:</h4>
+        <div class="off-screen-menu">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../about.html">ABOUT</a></li>
+             
+            </ul>
+        </div>
+
+        <nav>
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+    <h4>Create a poster for your favorite dessert!</h4>
 
         <main>
             <!-- settings for users to customize poster -->
@@ -41,7 +59,7 @@
                     <option value="Limelight">Limelight</option>
                 </select><br>
 
-                <label for="image">select an image</label>
+                <label for="image">Select an image</label>
                 <select id="image">
                     <option value="">Select an image</option>
                     <option value="./assets/galletita.png">Cookie</option>
@@ -78,6 +96,7 @@
 
 
         <!-- linking javascript file -->
+        <script src="../shared/hamburger.js"></script>
         <script src="./main.js"></script>
 </body>
 

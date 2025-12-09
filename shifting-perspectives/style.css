@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Archivo+Black&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Archivo", sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #E8D5DC;
+    background-color: #ffffff;
     text-align: center;
     font-size: 18px;
 }
@@ -17,62 +19,214 @@ body {
 .description {
     padding: 20px;
     text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .how-to-make {
     padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .ingredients {
     padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+#fresa {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #fresa img {
-    position: absolute;
-    max-width: 500px;
-    height: 500px;
-    left: 5px;
-    top: -50px;
-}
-
-#fresa {
-    position: relative;
+    position: static;
+    max-width: 480px;
+    width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .fresaconcrema {
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .fresaconcrema img {
-    max-width: 500px;
-    height: 500px;
-    flex-direction: row;
-    align-items: flex-end;
-
+    max-width: 480px;
+    width: 90%;
+    height: auto;
 }
 
-.stepone {
+.stepone, .steptwo, .stepthree {
     text-align: left;
-    padding-right: 300px;
-    font-size: 30px;
-    margin: 200px;
-    padding-bottom: -200px;
+    padding: 12px 18px;
+    font-size: 20px;
+    margin: 10px auto;
+    max-width: 900px;
+}
+
+/* Two-column layout for wider screens */
+@media (min-width: 1000px) {
+    .two-col{
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+        max-width: 1100px;
+        margin: 20px auto;
+    }
+    .two-col .left{
+        flex: 1 1 48%;
+    }
+    .two-col .right{
+        flex: 1 1 52%;
+    }
+    .two-col .right .ingredients, .two-col .right .instructions{
+        text-align: left;
+    }
+}
+img{
+    max-width:500px;
+    height:auto;
+    display: block;
+    margin-left: auto;      
+    margin-right: auto;  
+    margin-top: 20px; 
+    border-radius: 10px;
+}
+a, a:visited{
+    color: cornflowerblue;
+    text-decoration: none;
+}
+a:hover{
+    color: #0000ff;
+}
+
+.my-button {
+    display: block;
+    margin-top: -500px;
+    margin-left: 700px;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(70, 79, 96);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: top;
+}
+
+.my-button:hover {
+    background-color: #000000;
+}
+
+nav{
+    padding: 1rem;
+    display: flex; 
    
 }
-
-.steptwo {
-    text-align: left;
-    padding-left: 600px;
-    padding-bottom: -200px;
-
+.off-screen-menu{
+   background-color: black;
+   height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position:fixed;
+    top:0;
+    right:-450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
 }
 
-.stepthree {
-    text-align: left;
-    padding-right: 300px;
-    padding-bottom: -200px;
+.off-screen-menu.active{
+    right:0;
+}
+
+.ham-menu{
+    height: 50px;
+    width: 100px;
+    margin-left: auto;
+    position: relative;
+}
+
+.ham-menu span{
+    /* default: plain thin bar */
+    height: 5px;
+    width: 100px;
+    background-color: #ffffff;
+    display: block;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s ease;
+}
+
+/* Only the middle bar shows the image */
+.ham-menu span:nth-child(2){
+    height: 100px;
+    width: 100px;
+    background-image: url('../assests/flan.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: transparent;
+    border-radius: 8px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ham-menu span:nth-child(1){
+    top: 25%;
+
+}
+.ham-menu span:nth-child(3){
+    top: 75%;
+}
+.ham-menu.active span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2){
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+nav a{
+    margin-right: 35px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.rang{
+    position: sticky;
+    top: 0;
+}
+
+
+.about{
+    width: 50%;
+    margin: 0% auto;
+    text-align: center;
+    position: relative;
+    font-size: larger;
+
+    background-color: darkgrey;
 }
 
 /*mobile*/
@@ -89,18 +243,13 @@ body {
     #fresa {
         position: relative;
         text-align: center;
-        height: 250px;
-        margin-left: 200px;
-        margin-bottom: -100px;
-
+        margin: 0 auto 10px auto;
     }
 
     #fresa img {
-        max-width: 200px;
-        height: 200px;
-        left: 0;
-        top: 0;
-        margin-bottom: 20px;
+        max-width: 260px;
+        height: auto;
+        margin-bottom: 12px;
     }
     .fresaconcrema {
         flex-direction: column;
@@ -110,13 +259,13 @@ body {
     .fresaconcrema img {
         max-width: 100%;
         height: auto;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
     }
 
     .stepone, .steptwo, .stepthree {
-        padding: 0;
-        margin: 10px 0;
-        font-size: 20px;
+        padding: 8px 0;
+        margin: 8px 0;
+        font-size: 18px;
     }
 }
 .header {
@@ -124,4 +273,78 @@ body {
     font-size: 10px;
     margin-bottom: 20px;
     margin-right: 455px;   
+}
+
+/* Floating strawberries */
+.floating-strawberries {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.strawberry {
+    position: absolute;
+    opacity: 0.7;
+    animation: float 15s infinite ease-in-out;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.strawberry:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.strawberry:nth-child(2) {
+    left: 20%;
+    top: 60%;
+    animation-delay: 2s;
+}
+
+.strawberry:nth-child(3) {
+    left: 80%;
+    top: 30%;
+    animation-delay: 4s;
+}
+
+.strawberry:nth-child(4) {
+    left: 70%;
+    top: 70%;
+    animation-delay: 6s;
+}
+
+.strawberry:nth-child(5) {
+    left: 15%;
+    top: 80%;
+    animation-delay: 8s;
+}
+
+.strawberry:nth-child(6) {
+    left: 85%;
+    top: 10%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-50px) translateX(30px) rotate(10deg);
+    }
+    50% {
+        transform: translateY(-80px) translateX(-20px) rotate(5deg);
+    }
+    75% {
+        transform: translateY(-30px) translateX(40px) rotate(-10deg);
+    }
 }

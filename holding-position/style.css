@@ -1,56 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Archivo+Black&display=swap');
+
 body{
-    padding:0;
-    background-color: #f8dfbb;
-    color: #181717;
-    font-size: 24px;
-    font-family: Arial, sans-serif;
-}
-.reanimation-title {
-   background: #ffdab9;
-   width: 100%;
-   font-size: larger;
-   position: relative;
-   text-align: center;
-   margin: -5%;
-padding-top: 50px;
-    padding-bottom: 20px;
+    color: #000000;
+    font-size: 20px;
+    font-family: "Archivo", sans-serif;
+    margin-right:200px;
 
 }
 
-.title-div {
-    width: 25%;
-    font-size: larger;
+.title{
     text-align: center;
-    margin: 0% auto;
+    font-size: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 250px;
+    font-family: "Archivo Black", sans-serif;
 }
 
-.gallery {
-    width: 75%;
-    margin: 0% auto;
+.intro{
     text-align: center;
-    position: relative;
-
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 5px;
+    margin-right: 300px;
 }
 
-.gallery img{
-    width: 25%;
-    margin: 15%;
-    display: inline-block;
-    vertical-align: right;
+.tresleches, .espumilla, .guaguadepan, .heladodepaila, .quimbolito{
+    text-align: left;
+    margin-bottom: 50px;
 }
 
-nav{ 
-    background-color: #181717;
-    color: white;
-    padding: 15px; 
-    position: sticky;
-    top: 0;
-    right: 1250px;
+.tresleches img, .espumilla img, .guaguadepan img, .heladodepaila img, .quimbolito img{
+    width: 400px;
+    height: auto;
+    display:flex;
+    margin-right: 50px;
+}
+
+nav{
+    padding: 1rem;
+    display: flex; 
+   
+}
+.off-screen-menu{
+   background-color: black;
+   height: 100vh;
     width: 100%;
-    z-index: 2;
-    text-align: right;
+    max-width: 450px;
+    position:fixed;
+    top:0;
+    right:-450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
 }
 
+.off-screen-menu.active{
+    right:0;
+}
+
+.ham-menu{
+    height: 50px;
+    width: 100px;
+    margin-left: auto;
+    position: relative;
+}
+
+.ham-menu span{
+    /* default: plain thin bar */
+    height: 5px;
+    width: 100px;
+    background-color: #ffffff;
+    display: block;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s ease;
+}
+
+/* Only the middle bar shows the image */
+.ham-menu span:nth-child(2){
+    height: 100px;
+    width: 100px;
+    background-image: url('../assests/flan.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: transparent;
+    border-radius: 8px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ham-menu span:nth-child(1){
+    top: 25%;
+
+}
+.ham-menu span:nth-child(3){
+    top: 75%;
+}
+.ham-menu.active span:nth-child(1){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2){
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3){
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
 nav a{
     margin-right: 35px;
     color: white;
@@ -73,9 +137,7 @@ nav a{
     padding-bottom: 50px;
     background-color: darkgrey;
 }
-.paragraph-div{
-    margin-top: 100px;
-}
+
 
 
 
