@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Archivo+Black&display=swap');
+
+body {
+    font-family: "Archivo", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Floating desserts */
+.floating-desserts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.dessert {
+    position: absolute;
+    opacity: 0.6;
+    animation: float 15s infinite ease-in-out;
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dessert:nth-child(1) {
+    left: 10%;
+    top: 15%;
+    animation-delay: 0s;
+}
+
+.dessert:nth-child(2) {
+    left: 75%;
+    top: 25%;
+    animation-delay: 2s;
+}
+
+.dessert:nth-child(3) {
+    left: 20%;
+    top: 65%;
+    animation-delay: 4s;
+}
+
+.dessert:nth-child(4) {
+    left: 80%;
+    top: 70%;
+    animation-delay: 6s;
+}
+
+.dessert:nth-child(5) {
+    left: 50%;
+    top: 10%;
+    animation-delay: 8s;
+}
+
+.dessert:nth-child(6) {
+    left: 85%;
+    top: 45%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translateY(-40px) translateX(25px) rotate(8deg) scale(1.15);
+    }
+    50% {
+        transform: translateY(-70px) translateX(-15px) rotate(4deg) scale(0.9);
+    }
+    75% {
+        transform: translateY(-25px) translateX(35px) rotate(-8deg) scale(1.1);
+    }
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: 80px auto 40px;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.intro {
+    text-align: center;
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.question {
+    margin-bottom: 30px;
+}
+
+.question h2 {
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.question p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.answer {
+    outline: 0;
+    gap: 8px;
+    align-items: center;
+    background-color: #ff90e8;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-family: "Archivo", sans-serif;
+    justify-content: center;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all .14s ease-out;
+    white-space: nowrap;
+}
+
+.answer:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-4px, -4px);
+}
+
+.answer:focus-visible {
+    outline-offset: 1px;
+}
+
+.answer.correct {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
+
+.answer.incorrect {
+    background-color: #f44336;
+    color: white;
+    border-color: #f44336;
+}
+
+.answer:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.feedback {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    display: none;
+}
+
+.feedback.show {
+    display: block;
+}
+
+.feedback.correct {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.feedback.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+#results {
+    text-align: center;
+}
+
+#results h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#score {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+#restart {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-family: "Archivo", sans-serif;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#restart:hover {
+    background-color: #555;
+}
+
+
+nav {
+    padding: 1rem;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.off-screen-menu {
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+    position: fixed;
+    top: 0;
+    right: -450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+    z-index: 99;
+}
+
+.off-screen-menu.active {
+    right: 0;
+}
+
+.off-screen-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.off-screen-menu li {
+    margin: 20px 0;
+}
+
+.off-screen-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.ham-menu {
+    height: 50px;
+    width: 100px;
+    position: relative;
+    cursor: pointer;
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 100px;
+    background-color: #ffffff;
+    display: block;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s ease;
+}
+
+/* Only the middle bar shows the image */
+.ham-menu span:nth-child(2) {
+    height: 100px;
+    width: 100px;
+    background-image: url('../assests/flan.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: transparent;
+    border-radius: 8px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .quiz-container {
+        margin: 60px 20px 20px;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+    }
+}

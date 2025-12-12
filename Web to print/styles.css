@@ -246,13 +246,13 @@ nav a {
         margin-top: 20px;
     }
 }
-/* media query for print styles -- this allows us to hide everything except the poster itself when printing */
+
 @media print {
 
     #poster{
         print-color-adjust: exact;
     }
-    /* All your print styles go here */
+
     #settings,
     #print,
     h4 {
@@ -260,7 +260,7 @@ nav a {
     }
 }
 
-/* media query for mobile styles */
+
 @media (max-width: 760px) {
     main{
         flex-direction: column;
@@ -280,7 +280,6 @@ nav a {
     }
 }
 
-/* Floating flan image */
 .floating-flan {
     position: fixed;
     width: 100px;

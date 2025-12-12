@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-// Getting the form inputs by their ids and storing them in variables
+
 let backgroundInput = document.getElementById("bg-color");
 let fontColorInput = document.getElementById("fg-color");
 let fontInput = document.getElementById("font");
@@ -20,42 +20,49 @@ let textInput = document.getElementById("text");
 let button = document.getElementById("print");
 const defaultFloatingImage = "./assets/flan.png";
 
-// Getting the poster, the poster text and poster image by their ids and storing them in variables
+
 let poster = document.getElementById("poster");
 let posterText = document.getElementById("poster-text");
 let posterImage = document.getElementById("poster-image");
 
-// when the bg input is changed, update the poster background
-backgroundInput.addEventListener("change", function(){
-    let bgcolor = this.value; //grab the current input value
-    poster.style.backgroundColor = bgcolor; //use .style to add it as a bg color
-})
-// when the font color input is changed, update the poster font color
-fontColorInput.addEventListener("change", function(){
-    let fgcolor = this.value; //grab the current input value
-    poster.style.color = fgcolor; //use .style to add it as a font color
-})
-// when the font input is changed, update the poster text font
-fontInput.addEventListener("change", function(){
-    let font = this.value; //grab the current input value
-    posterText.style.fontFamily = font; //use .style to add it as a font family 
+    
+backgroundInput.addEventListener("change", function () {
+    let bgcolor = this.value;
+    poster.style.backgroundColor = bgcolor;
+    document.body.style.backgroundColor = bgcolor;
+
+
+    const hamMenuSpans = document.querySelectorAll('.ham-menu span:not(:nth-child(2))');
+    hamMenuSpans.forEach(span => {
+        span.style.backgroundColor = bgcolor;
+    });
 })
 
-// when the font size input is changed, update the poster text font
-fontSizeInput.addEventListener("change", function(){
-    let size = this.value; //grab the current input value
-    posterText.style.fontSize = size + "px"; //use .style to add it as a font size. We need to also add "px" for pixels at the end for it to work as CSS. 
+fontColorInput.addEventListener("change", function () {
+    let fgcolor = this.value;
+    poster.style.color = fgcolor;
 })
 
-// when the font stretch input is changed, update the poster text font
-fontStretchInput.addEventListener("change", function(){
-    let stretchFactor = this.value; //grab the current input value
+fontInput.addEventListener("change", function () {
+    let font = this.value;
+    posterText.style.fontFamily = font;
+})
+
+
+fontSizeInput.addEventListener("change", function () {
+    let size = this.value;
+    posterText.style.fontSize = size + "px";
+})
+
+
+fontStretchInput.addEventListener("change", function () {
+    let stretchFactor = this.value;
     console.log(stretchFactor)
-    posterText.style.transform = "scaleX(" + stretchFactor + ")"; //use .style to add it as a scale size
+    posterText.style.transform = "scaleX(" + stretchFactor + ")";
 })
 
 
-// helper to sync floating images with current selection
+
 function updateFloatingImages(imgPath) {
     const source = imgPath || defaultFloatingImage;
     document.querySelectorAll('.floating-flan').forEach((el) => {
@@ -63,22 +70,22 @@ function updateFloatingImages(imgPath) {
     });
 }
 
-// when the image input changes, update the poster image and floating images
-imageInput.addEventListener("change", function(){
-    let img = this.value; //grab the current input value
-    posterImage.src = img; //use .src to change the image source
+
+imageInput.addEventListener("change", function () {
+    let img = this.value;
+    posterImage.src = img;
     updateFloatingImages(img);
 })
-// when the text input changes, update the poster text 
-textInput.addEventListener("change", function(){
-    let text = this.value; //grab the current input value
-    posterText.innerHTML = text; //use .innerHTML to change the element text
+
+textInput.addEventListener("change", function () {
+    let text = this.value;
+    posterText.innerHTML = text;
 })
 
-// when the button is clicked, print the page
-button.addEventListener("click", function(){
-    window.print(); //use .print to print the window
+
+button.addEventListener("click", function () {
+    window.print();
 })
 
-// initialize floating images to current selection or default
+
 updateFloatingImages(imageInput.value);
