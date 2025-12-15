@@ -64,6 +64,11 @@ nav{
 }
 
 .ham-menu{
+    /*make it sticky*/
+    position: fixed;
+    top: 10px;
+    left:10px;
+    /***/
     height: 50px;
     width: 100px;
     margin-left: auto;
